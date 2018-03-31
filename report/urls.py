@@ -44,6 +44,7 @@ urlpatterns = [
     url(r'^coursework/', include('coursework.urls',namespace="coursework")),
     url(r'^students/', include('students.urls',namespace="students")),
     url(r'^reports/', include('reports.urls',namespace="reports")),
+    url(r'^login/$',LoginView.as_view(), name="login"),
     url(r'^logout/$',LogoutView.as_view(), name="logout"),
     url(r'^activate/(?P<code>[a-z0-9].*)/$',activate_user_view, name='activate'),
     url(r'^register/$',RegisterView.as_view(), name="register"),
