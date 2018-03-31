@@ -25,9 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '8&2$quvu-$+$l1fi7^h##^u+k^p(#t#8(3zs7+59g-o0=q71_x'  
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*'] 
+ALLOWED_HOSTS = ['traebrains.herokuapp.com','localhost'] 
 
 
 # Application definition
