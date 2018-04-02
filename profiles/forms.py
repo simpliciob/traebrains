@@ -13,7 +13,7 @@ class RegisterForm(UserCreationForm):
     
     class Meta(UserCreationForm.Meta):
         model=Profile
-        fields=('username','email','is_student','is_teacher','is_admin','school','class_teacher')                          
+        fields=('username','first_name','last_name','email','is_student','is_teacher','is_admin','school','class_teacher')                          
     
 
     
@@ -33,7 +33,7 @@ class RegisterForm(UserCreationForm):
     def save(self,commit=True):
         user=super(RegisterForm, self).save(commit=False)
         user.set_password(self.cleaned_data["password1"])
-        user.is_active=False
+        user.is_active=True
         if commit:
             user.save()
         return user

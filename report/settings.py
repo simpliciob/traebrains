@@ -27,7 +27,7 @@ SECRET_KEY = '8&2$quvu-$+$l1fi7^h##^u+k^p(#t#8(3zs7+59g-o0=q71_x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['traebrains.herokuapp.com','localhost'] 
+ALLOWED_HOSTS = ['traebrains.herokuapp.com','127.0.0.1'] 
 
 
 # Application definition
@@ -145,6 +145,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'static'),
 ]
+#STATICFILES_DIRS = [
+    #BASE_DIR +  '/static/',
+#]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE='whitenoise.django.GzipManifestStaticFilesStorage'
                   

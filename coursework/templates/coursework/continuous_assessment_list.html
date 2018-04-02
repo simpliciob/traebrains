@@ -1,37 +1,91 @@
-{% extends "base_site.html"%}
+{% extends "tables.html"%}
 {%block head_title%} Subjects ||{{block.super}}{%endblock head_title%}
 
 
 
 {%block content %}
-<h1>continuous_Assessment</h1>
+
+
+ <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Course work</h3>
+              </div>
+
+              
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    
+                    <div class="clearfix"></div>
+                  </div>
+                 
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    
+                    <div class="clearfix"></div>
+                  </div>
+                  
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    
+                    <div class="clearfix"></div>
+                  </div>
+                 
+                    <table id="datatable-buttons" class="table table-striped table-bordered">
+                      <thead>
+                        <tr>
+                         <th>student number</d>
+                         <th>subject name</th>
+                         <th>Test Name</th>
+                         <th>Test Mark</th>
+                         <th>Edit</th>
+                         <th>Delete</th>
+ 
+                        </tr>
+                      </thead>
+                   {% for obj in object_list %}
+
+                      <tbody>
+                        <tr>
+                          <td>{{obj.student_number}}</td>
+                          <td>{{obj.subject_name}}</td>
+                          <td>{{obj.Test_name}}</td>
+                          <td>{{obj.Test_mark}}</td>
+                          <td><a href='{%url "coursework:update" obj.id %}'>edit| </a></td>
+                          <td><a href='{%url "coursework:delete" obj.id %}'>delete</a></td>
+
+                        </tr>
+                        
+                        
+                      </tbody>
+					  {%endfor%}
+                    </table>
+                  </div>
+                </div>
+              </div>
+			  </div>
+			  </div>
+			   </div>
+			    </div>
+			  {%endblock content%}
+
+             
 
 
 
-<table border="1" cellpadding="2">
-
-<th>student number</d>
-<th>subject name</th>
-<th>Test Name</th>
-<th>Test Mark</th>
-<th>Edit</th>
-<th>Delete</th>
-
-{% for obj in object_list%}
-
-<tr>
-<td>{{obj.student_number}}</td>
-<td>{{obj.subject_name}}</td>
-<td>{{obj.Test_name}}</td>
-<td>{{obj.Test_mark}}</td>
-<td><a href='{%url "coursework:update" obj.id %}'>edit| </a></td>
-<td><a href='{%url "coursework:delete" obj.id %}'>delete</a></td>
 
 
-</tr>
-{%endfor%}
 
 
-</table>
-{%endblock content%}
+
 
