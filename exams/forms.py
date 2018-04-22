@@ -1,11 +1,20 @@
 from django import forms
 from .models import ExamMark
 
+
+
+
 class ExamMarkForm(forms.ModelForm):
+    
+        
+
+    
+    
     class Meta:
         
         model=ExamMark
         fields=[
+            'school',
             'student_number',
             'subject_name',
             'Total_Mark',

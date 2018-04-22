@@ -55,19 +55,20 @@
 
                         </tr>
                       </thead>
-                   {% for x in object_list %}
+                  
 
                       <tbody>
+					   {% for x in object_list %}
                         <tr>
                           <td>{{x.subject_name}}</td>
                           <td>{{x.Test_name}}</td>
                           <td>{{x.Test_mark}}</td>
 
                         </tr>
-                        
+                        {%endfor%}
                         
                       </tbody>
-					  {%endfor%}
+					  
                     </table>
                   </div>
                 </div>

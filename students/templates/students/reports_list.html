@@ -50,9 +50,10 @@
                         <th>achievement </th>
                         </tr>
                       </thead>
-                   {% for x in object_list %}
+                 
 
                       <tbody>
+					    {% for x in object_list %}
                         <tr>
                           <td>{{obj.class_position}}</td>
                           <td>{{obj.comments}}</td>
@@ -60,9 +61,9 @@
                           <td>{{obj.achievements}}</td>
                         </tr>
                         
-                        
+                        {%endfor%}
                       </tbody>
-					  {%endfor%}
+					  
                     </table>
                   </div>
                 </div>

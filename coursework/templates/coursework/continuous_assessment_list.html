@@ -53,9 +53,10 @@
  
                         </tr>
                       </thead>
-                   {% for obj in object_list %}
+                  
 
                       <tbody>
+					   {% for obj in object_list %}
                         <tr>
                           <td>{{obj.student_number}}</td>
                           <td>{{obj.subject_name}}</td>
@@ -65,10 +66,10 @@
                           <td><a href='{%url "coursework:delete" obj.id %}'>delete</a></td>
 
                         </tr>
-                        
+                        {%endfor%}
                         
                       </tbody>
-					  {%endfor%}
+					  
                     </table>
                   </div>
                 </div>

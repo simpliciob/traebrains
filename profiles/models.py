@@ -7,13 +7,18 @@ from django.db.models.signals import post_save
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import AbstractUser
 User=settings.AUTH_USER_MODEL
+
 class Profile(AbstractUser):
     is_student=models.BooleanField(default=False)
     is_teacher=models.BooleanField(default=False)
     is_classTeacher=models.BooleanField(default=False)
     is_admin=models.BooleanField(default=False)
+    is_librarian=models.BooleanField(default=False)
+    is_Burser=models.BooleanField(default=False)
+    is_secretary=models.BooleanField(default=False)
     school=models.CharField(max_length=50)
     class_teacher=models.CharField(max_length=50,blank=True)
+    
     REQUIRED_FIELDS=['email']
     def __str__(self):
         return self.username

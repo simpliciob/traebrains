@@ -1,32 +1,84 @@
-{% extends "base_site.html"%}
-{%block head_title%} Subjects ||{{block.super}}{%endblock head_title%}
+{% extends "tables.html"%}
+
+{%block head_title%}Payment History||{{block.super}}{%endblock head_title%}
 
 
 
 {%block content %}
-<h1>payment history</h1>
 
 
+ <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Payment History</h3>
+              </div>
 
-<table border="1" cellpadding="1">
+              
+            </div>
 
-<th> bank name</th>
-<th>amount paid</th>
-<th>invoice number</th>
-<th>tutoring fee</th>
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    
+                    <div class="clearfix"></div>
+                  </div>
+                 
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    
+                    <div class="clearfix"></div>
+                  </div>
+                  
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    
+                    <div class="clearfix"></div>
+                  </div>
+                 
+                    <table id="datatable-buttons" class="table table-striped table-bordered">
+                      <thead>
+                        <tr>
+                    
+                         <th>Invoice number</th>
+                         <th>Amount paid</th>
+                         <th>Tutoring Fee</th>
+                         <th>Bank name </th>
+                         
+                        </tr>
+                      </thead>
+                   
+
+                      <tbody>
+					  {% for obj in object_list %}
+                        <tr>
+                         
+                          <td>{{obj.invoice_number}}</td>
+                          <td>{{obj.Amount_paid}}</td>
+                          <td>{{obj.tutoring_fee}}</td>
+                          <td>{{obj.Bank_name}}</td>
+                        </tr>
+                         {%endfor%}
+                        
+                      </tbody>
+					 
+                    </table>
+                  </div>
+                </div>
+              </div>
+			  </div>
+			  </div>
+			   </div>
+			    </div>
+			  {%endblock content%}
+
+             
 
 
-{% for obj in fee_list%}
-
-<tr>
-<td>{{obj.Bank_name}}</td>
-<td>{{obj.Amount_paid}}</td>
-<td>{{obj.invoice_number}}</td>
-<td>{{obj.tutoring_fee}}</td>
-
-
-</tr>
-{%endfor%}
-</table>
-{%endblock content%}
 

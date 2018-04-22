@@ -55,22 +55,23 @@
                          <th>delete</td>
                         </tr>
                       </thead>
-                   {% for obj in object_list %}
+                  
 
                       <tbody>
+					   {% for obj in object_list %}
                         <tr>
-                          <td >{{m.student_number}}</td>
-                          <td>{{m.class_position}}</td>
-                          <td>{{m.comments}}</td>
-                          <td>{{m.behaviour}}</td>
-                          <td>{{m.achievements}}</td>
-                          <td><a href='{%url "reports:update" m.id %}'>edit| </a></td>
-                          <td><a href='{%url "reports:delete" m.id %}'>delete</a></td>
+                          <td >{{obj.student_number}}</td>
+                          <td>{{obj.class_position}}</td>
+                          <td>{{obj.comments}}</td>
+                          <td>{{obj.behaviour}}</td>
+                          <td>{{obj.achievements}}</td>
+                          <td><a href='{%url "reports:update" obj.id %}'>edit| </a></td>
+                          <td><a href='{%url "reports:delete" obj.id %}'>delete</a></td>
                         </tr>
-                        
+                         {%endfor%}
                         
                       </tbody>
-					  {%endfor%}
+					 
                     </table>
                   </div>
                 </div>

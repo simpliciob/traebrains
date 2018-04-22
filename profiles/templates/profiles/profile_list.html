@@ -54,9 +54,10 @@
 							 <th >Delete</th>
                         </tr>
                       </thead>
-                   {% for obj in object_list %}
+               
 
                       <tbody>
+					      {% for obj in object_list %}
                         <tr>
                           <td>{{obj.username}}</td>
 						    <td>{{obj.first_name}}</td>
@@ -64,10 +65,10 @@
 							    <td>{{obj.school}}</td>
                                 <td><a href='{%url "profiles:delete-user" obj.id %}'>delete</a></td>
                         </tr>
-                        
+                       {%endfor%}
                         
                       </tbody>
-					  {%endfor%}
+
                     </table>
                   </div>
                 </div>

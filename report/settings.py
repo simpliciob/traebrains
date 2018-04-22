@@ -33,7 +33,11 @@ ALLOWED_HOSTS = ['traebrains.herokuapp.com','127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'parents.apps.ParentsConfig',
     'reports.apps.ReportsConfig',
+    'hostels.apps.HostelsConfig',
+    'fees.apps.FeesConfig',
+    'library.apps.LibraryConfig',
     'students.apps.StudentsConfig',
     'coursework.apps.CourseworkConfig',
     'attendance.apps.AttendanceConfig',

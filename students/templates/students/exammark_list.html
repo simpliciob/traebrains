@@ -50,19 +50,20 @@
                         <th>comment</th>
                         </tr>
                       </thead>
-                   {% for x in object_list %}
+                  
 
                       <tbody>
+					   {% for x in object_list %}
                         <tr>
                           <td>{{x.subject_name}}</td>
                           <td>{{x.Total_Mark}}</td>
                           <td>{{x.grade}}</td>
                           <td>{{x.comment}}</td>
                         </tr>
-                        
+                        {%endfor%} 
                         
                       </tbody>
-					  {%endfor%}
+					 
                     </table>
                   </div>
                 </div>

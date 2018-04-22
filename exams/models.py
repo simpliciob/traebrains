@@ -25,12 +25,14 @@ class ExamMarkManager(models.Manager):
    
 class ExamMark(models.Model):
     user=models.ForeignKey(User)
+    school=models.CharField(max_length=50)
     student_number=models.CharField(max_length=50,blank=False,null=False)
     subject_name=models.CharField(max_length=50)
     Total_Mark=models.IntegerField()
     grade=models.CharField(max_length=1)
     comment=models.TextField(max_length=200)
     objects=ExamMarkManager()
+    
     def __str__(self):
         return self.student_number
 

@@ -22,6 +22,7 @@ class ReportsManager(models.Manager):
     
 class Reports(models.Model):
     user=models.ForeignKey(User)
+    school=models.CharField(max_length=50)
     student_number=models.CharField(max_length=200)
     comments= models.TextField(max_length=200,blank=False,null=False)
     behaviour=models.CharField(max_length=50)

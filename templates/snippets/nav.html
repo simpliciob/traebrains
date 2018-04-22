@@ -1,7 +1,5 @@
 
-<li><a href='{%url "home" %}'>home </a></li>
-<li><a href='{%url "about" %}'>about</a></li>
-<li><a href='{%url "contact" %}'>contact </a></li>
+
 {% if user.is_authenticated and user.is_teacher %}
 
 
@@ -26,18 +24,44 @@
 {% if user.is_authenticated and user.is_student%}
 <li><a href='{%url "students:exammark" %}'>View Examinations Results </a></li>
 <li><a href='{%url "students:studentscontinuous" %}'>View Coursework  </a></li>
-
+<li><a href='{%url "students:fees" %}'>View Fees  </a></li>
+<li><a href='{%url "students:hostels" %}'>View Accomodation  </a></li>
+<li><a href='{%url "students:borrowing" %}'>View Library Information  </a></li>
 <li><a href='{%url "students:reportst" %}'>View Report </a></li>
 
 {% else %}
 {% if user.is_authenticated and user.is_admin %}
-<li><a href='{%url "profiles:student" %}'>View Students </a></li>
-<li><a href='{%url "profiles:teacher" %}'>View Teachers </a></li>
+<li><a href='{%url "parents:student" %}'>View Students </a></li>
+<li><a href='{%url "parents:teacher" %}'>View Teachers </a></li>
+<li><a href='{%url "parents:books" %}'>View school books </a></li>
+<li><a href='{%url "parents:payment" %}'>View student payments </a></li>
+<li><a href='{%url "parents:borrowing" %}'>View Library Information </a></li>
 
 <li><a href='{%url "register" %}'>Register </a></li>
+<li><a href='{%url "password_change" %}'>Change Password </a></li>\
+
+{% else %}
+{% if user.is_authenticated and user.is_librarian %}
+<li><a href='{%url "library:booklist" %}'>View Books </a></li>
+<li><a href='{%url "library:addbook" %}'>Add Books </a></li>
+<li><a href='{%url "library:borrowlist" %}'>View Borrowing list </a></li>
+<li><a href='{%url "library:addborrowing" %}'>Add Borrowing entry</a></li>
+<li><a href='{%url "password_change" %}'>Change Password </a></li>
+{% else %}
+{% if user.is_authenticated and user.is_Burser %}
+<li><a href='{%url "fees:feeslist" %}'>Payments List </a></li>
+<li><a href='{%url "fees:addfees" %}'>Make Payment </a></li>
+<li><a href='{%url "password_change" %}'>Change Password </a></li>
+{% else %}
+{% if user.is_authenticated and user.is_secretary %}
+<li><a href='{%url "hostels:hostellist" %}'>Accomodation Information </a></li>
+<li><a href='{%url "hostels:addhostel" %}'>Add Student Accomodation </a></li>
 <li><a href='{%url "password_change" %}'>Change Password </a></li>
 
 
+{% endif %}
+{% endif %}
+{% endif %}
 {% endif %}
 {% endif %}
 {% endif %}

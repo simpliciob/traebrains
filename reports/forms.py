@@ -8,6 +8,7 @@ class ReportsForm(forms.ModelForm):
         
         model=Reports
         fields=[
+            'school',
             'student_number',
             'class_position',
             'comments',

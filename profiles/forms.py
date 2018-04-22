@@ -13,7 +13,7 @@ class RegisterForm(UserCreationForm):
     
     class Meta(UserCreationForm.Meta):
         model=Profile
-        fields=('username','first_name','last_name','email','is_student','is_teacher','is_admin','school','class_teacher')                          
+        fields=('username','first_name','last_name','email','is_student','is_teacher','is_admin','is_librarian','is_Burser','is_secretary','school','class_teacher')                          
     
 
     

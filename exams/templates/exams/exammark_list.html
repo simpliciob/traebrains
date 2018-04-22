@@ -5,9 +5,7 @@
 
 
 {%block content %}
-
-
- <div class="right_col" role="main">
+<div class="right_col" role="main">
           <div class="">
             <div class="page-title">
               <div class="title_left">
@@ -35,7 +33,7 @@
                   </div>
                   
 
-              <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-19 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
                     
@@ -44,43 +42,44 @@
                  
                     <table id="datatable-buttons" class="table table-striped table-bordered">
                       <thead>
-                        <tr>
-                         <th >student number</th>
+                      <tr>
+                         <th>student number</th>
                          <th>subject name</th>
                          <th>Total Mark</th>
                          <th>grade</th>
                          <th>comment </th>
                          <th>edit </th>
                          <th>delete</th>
-                        </tr>
+                        </tr>  
                       </thead>
-                   {% for obj in object_list %}
+					   
+
 
                       <tbody>
-                        <tr>
-                          <td>{{obj.student_number}}</a></td>
+					     {% for obj in object_list %}
+                       <tr>
+					      
+                          <td>{{obj.student_number}}</td>
                           <td>{{obj.subject_name}}</td>
                           <td>{{obj.Total_Mark}}</td>
                           <td>{{obj.grade}}</td>
                           <td>{{obj.comment}}</td>
-                          <td><a href='{%url "exams:update" obj.id %}'>edit| </a></td>
+                          <td><a href='{%url "exams:update" obj.id %}'>edit </a></td>
                           <td><a href='{%url "exams:delete-mark" obj.id %}'>delete</a></td>
-                        </tr>
-                        
-                        
+                        </tr> 
+                         {%endfor%}
                       </tbody>
-					  {%endfor%}
+					 
                     </table>
                   </div>
                 </div>
               </div>
-			  </div>
-			  </div>
-			   </div>
-			    </div>
-			  {%endblock content%}
 
              
 
-
-
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+		{% endblock content %}

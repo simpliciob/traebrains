@@ -6,6 +6,9 @@ from django.http import Http404
 from django.contrib.auth import get_user_model
 from exams.models  import ExamMark
 from .models import Profile
+from library.models import Book,Borrowing
+from fees.models import Fee
+
 from django.urls import reverse
 from .forms import RegisterForm,UpdateForm
 User=get_user_model()
@@ -27,15 +30,9 @@ class ProfileListView(ListView,LoginRequiredMixin):
     def get_queryset(self):
         return Profile.objects.filter(class_teacher=self.request.user).filter(is_student=True)
 class StudentListView(ListView,LoginRequiredMixin):
-    template_name='/profiles/student_list.html'
+    template_name='profiles/students_list.html'
     def get_queryset(self):
         return Profile.objects.filter(school=self.request.user).filter(is_student=True)
-class TeacherListView(ListView,LoginRequiredMixin):
-    tempelate_name='/profiles/teachers_list.html'
-    def get_queryset(self):
-        return Profile.objects.filter(school=self.request.user).filter(is_teacher=True)
-    
-
 
 class RegisterView(CreateView,LoginRequiredMixin):
     form_class=RegisterForm

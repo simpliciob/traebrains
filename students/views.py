@@ -6,6 +6,9 @@ from exams.models import ExamMark
 from coursework.models import Continuous_Assessment
 from attendance.models import Attendance
 from reports.models import Reports
+from fees.models import Fee
+from library.models import Borrowing
+from hostels.models import Hostel
 from django.db.models import Q
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,View
 from django.contrib.auth.models import User
@@ -65,7 +68,28 @@ class ReportsListView(ListView,LoginRequiredMixin):
     def get_queryset(self):
         user=self.request.user
         return Reports.objects.filter(student_number=user)
+class FeesListView(ListView,LoginRequiredMixin):
+    template_name="students/fee_list.html"
+    context_object_name = 'fees_list'
+    def get_queryset(self):
+        user=self.request.user
+        return Fee.objects.filter(student_number=user)
+class BorrowingListView(ListView,LoginRequiredMixin):
+    template_name="students/borrowing_list.html"
+    context_object_name = 'borrow_list'
+    def get_queryset(self):
+        user=self.request.user
+        return Borrowing.objects.filter(student_number=user)
+class HostelListView(ListView,LoginRequiredMixin):
+    template_name="students/hostel_list.html"
+    context_object_name = 'hostel_list'
+    def get_queryset(self):
+        user=self.request.user
+        return Hostel.objects.filter(student_number=user)
     
+    
+    
+
 
 
     
